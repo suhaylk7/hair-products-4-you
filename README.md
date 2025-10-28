@@ -1,1 +1,114 @@
-# hair-products-4-you
+
+<html>
+<head>
+    <title>Ingredient Calculator</title>
+    <style>
+        .container {
+            width: 50%;
+            margin: 20px auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .slider-container {
+            margin: 20px 0;
+        }
+        .slider {
+            width: 100%;
+            height: 25px;
+        }
+        .label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .value {
+            display: inline-block;
+            margin-left: 10px;
+        }
+        #totalPrice {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 30px;
+            color: #2c3e50;
+        }
+        body{
+            background-color: #13dd0c80;
+            
+        }
+        a {
+            display: block;
+            text-align: center;
+            font-size: 50PX;
+            
+        }
+        
+        img {
+            position:relative;
+            height:150px;
+            width;400px;
+            left:360px;
+            
+            
+            
+         }
+    </style>
+</head>
+<body>
+    <img src="file:///C:/Users/User/Downloads/af5d65e6-fd90-4c9b-ad33-04e432c599fa.png">
+    <div class="container">
+        <div class="slider-container">
+            <div class="label">Shea Butter <span class="value" id="sheaValue">0</span>g</div>
+            <input type="range" min="0" max="300" value="0" class="slider" id="shea">
+        </div>
+
+        <div class="slider-container">
+            <div class="label">Coconut Oil <span class="value" id="coconutValue">0</span>g</div>
+            <input type="range" min="0" max="300" value="0" class="slider" id="coconut">
+        </div>
+
+        <div class="slider-container">
+            <div class="label">Kaolin Clay <span class="value" id="kaolinValue">0</span>g</div>
+            <input type="range" min="0" max="300" value="0" class="slider" id="kaolin">
+        </div>
+
+        <div class="slider-container">
+            <div class="label">Bentonite Clay <span class="value" id="bentoniteValue">0</span>g</div>
+            <input type="range" min="0" max="300" value="0" class="slider" id="bentonite">
+        </div>
+
+        <div class="slider-container">
+            <div class="label">Beeswax <span class="value" id="beeswaxValue">0</span>g</div>
+            <input type="range" min="0" max="300" value="0" class="slider" id="beeswax">
+        </div>
+
+        <div id="totalPrice">Total Price: 0.00 SAR</div>
+    </div>
+
+    <script>
+        function updatePrice() {
+            const shea = document.getElementById('shea').value * 0.25;
+            const coconut = document.getElementById('coconut').value * 0.10;
+            const kaolin = document.getElementById('kaolin').value * 0.40;
+            const bentonite = document.getElementById('bentonite').value * 0.05;
+            const beeswax = document.getElementById('beeswax').value * 0.05;
+
+            const total = shea + coconut + kaolin + bentonite + beeswax;
+            document.getElementById('totalPrice').textContent = `Total Price: ${total.toFixed(2)} SAR`;
+        }
+
+        // Update values and price when sliders change
+        const sliders = ['shea', 'coconut', 'kaolin', 'bentonite', 'beeswax'];
+        sliders.forEach(slider => {
+            document.getElementById(slider).oninput = function() {
+                document.getElementById(`${slider}Value`).textContent = this.value;
+                updatePrice();
+            }
+        });
+    </script>
+
+    <a href="useless2.html">purchase</a>
+
+</body>
+</html></div>    
+            
+
+       
